@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".GPSActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude: "
+        android:id="@+id/latLabel"
+        android:layout_below="@+id/waypointName"
+        android:layout_alignRight="@+id/altLabel"
+        android:layout_alignEnd="@+id/altLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude: "
+        android:id="@+id/lonLabel"
+        android:layout_below="@+id/latLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altitude: "
+        android:id="@+id/altLabel"
+        android:layout_below="@+id/lonLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lat"
+        android:id="@+id/GPSLat"
+        android:layout_toEndOf="@+id/latLabel"
+        android:layout_above="@+id/lonLabel"
+        android:layout_toRightOf="@+id/latLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lon"
+        android:id="@+id/GPSLon"
+        android:layout_toEndOf="@+id/lonLabel"
+        android:layout_below="@+id/GPSLat"
+        android:layout_toRightOf="@+id/lonLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alt"
+        android:id="@+id/GPSAlt"
+        android:layout_below="@+id/lonLabel"
+        android:layout_toRightOf="@+id/altLabel"
+        android:layout_toEndOf="@+id/altLabel" />
+
+    <EditText
+        android:id="@+id/waypointName"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:hint="Waypoint Name"
+        android:inputType="text"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bearing: "
+        android:id="@+id/bearingLabel"
+        android:layout_below="@+id/fixVal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BearingVal"
+        android:id="@+id/bearingVal"
+        android:layout_toEndOf="@+id/bearingLabel"
+        android:layout_below="@+id/fixLabel"
+        android:layout_toRightOf="@+id/bearingLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fix Quality: "
+        android:id="@+id/fixLabel"
+        android:layout_toStartOf="@+id/GPSLon"
+        android:layout_below="@+id/altLabel"
+        android:layout_toLeftOf="@+id/GPSLon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fix val"
+        android:id="@+id/fixVal"
+        android:layout_toEndOf="@+id/GPSAlt"
+        android:layout_below="@+id/GPSAlt"
+        android:layout_toRightOf="@+id/GPSAlt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed: "
+        android:id="@+id/speedLabel"
+        android:layout_below="@+id/bearingLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed Val"
+        android:id="@+id/speedVal"
+        android:layout_below="@+id/bearingLabel"
+        android:layout_toRightOf="@+id/speedLabel"
+        android:layout_toEndOf="@+id/speedLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time: "
+        android:id="@+id/timeLabel"
+        android:layout_below="@+id/speedLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00 AM"
+        android:id="@+id/timeVal"
+        android:layout_alignTop="@+id/timeLabel"
+        android:layout_toRightOf="@+id/timeLabel"
+        android:layout_toEndOf="@+id/timeLabel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/updateBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="update"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to Log"
+        android:id="@+id/addBtn"
+        android:layout_alignBottom="@+id/updateBtn"
+        android:layout_centerHorizontal="true"
+        android:onClick="addCoord"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/saveBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="saveFile"/>
+
+
+</RelativeLayout>
